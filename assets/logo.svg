@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- PLACEHOLDER logo: BM monogram on a gear badge.
+     Replace with a vectorized version of the real Besterd Mechanical logo
+     from besterdmechanical.ca/images/home/bm_logo.gif once available. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Besterd Mechanical logo (placeholder)">
+  <defs>
+    <linearGradient id="metal" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0"   stop-color="#f5e7c1"/>
+      <stop offset="1"   stop-color="#c9a964"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0"   stop-color="#2e241c"/>
+      <stop offset="1"   stop-color="#0c0906"/>
+    </linearGradient>
+  </defs>
+
+  <!-- drop shadow -->
+  <circle cx="104" cy="104" r="88" fill="rgba(0,0,0,.25)"/>
+
+  <!-- gear teeth ring -->
+  <g fill="url(#ring)">
+    <!-- 12 teeth around a circle, 30° apart -->
+    <g transform="translate(100 100)">
+      <g>
+        <rect x="-10" y="-96" width="20" height="20" rx="2"/>
+        <rect x="-10" y="-96" width="20" height="20" rx="2" transform="rotate(30)"/>
+        <rect x="-10" y="-96" width="20" height="20" rx="2" transform="rotate(60)"/>
+        <rect x="-10" y="-96" width="20" height="20" rx="2" transform="rotate(90)"/>
+        <rect x="-10" y="-96" width="20" height="20" rx="2" transform="rotate(120)"/>
+        <rect x="-10" y="-96" width="20" height="20" rx="2" transform="rotate(150)"/>
+        <rect x="-10" y="-96" width="20" height="20" rx="2" transform="rotate(180)"/>
+        <rect x="-10" y="-96" width="20" height="20" rx="2" transform="rotate(210)"/>
+        <rect x="-10" y="-96" width="20" height="20" rx="2" transform="rotate(240)"/>
+        <rect x="-10" y="-96" width="20" height="20" rx="2" transform="rotate(270)"/>
+        <rect x="-10" y="-96" width="20" height="20" rx="2" transform="rotate(300)"/>
+        <rect x="-10" y="-96" width="20" height="20" rx="2" transform="rotate(330)"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- outer ring -->
+  <circle cx="100" cy="100" r="84" fill="url(#ring)"/>
+  <!-- inner face -->
+  <circle cx="100" cy="100" r="72" fill="url(#metal)" stroke="#2e241c" stroke-width="3"/>
+  <!-- inner highlight ring -->
+  <circle cx="100" cy="100" r="62" fill="none" stroke="#2e241c" stroke-width="2" stroke-dasharray="4 3"/>
+
+  <!-- top arc text: BESTERD -->
+  <path id="topArc" d="M 38,100 A 62,62 0 0 1 162,100" fill="none"/>
+  <text font-family="Impact, 'Arial Black', sans-serif" font-size="18" letter-spacing="4"
+        fill="#2e241c" text-anchor="middle">
+    <textPath href="#topArc" startOffset="50%">BESTERD</textPath>
+  </text>
+
+  <!-- bottom arc text: MECHANICAL -->
+  <path id="botArc" d="M 40,108 A 60,60 0 0 0 160,108" fill="none"/>
+  <text font-family="Impact, 'Arial Black', sans-serif" font-size="14" letter-spacing="3"
+        fill="#2e241c" text-anchor="middle">
+    <textPath href="#botArc" startOffset="50%">MECHANICAL</textPath>
+  </text>
+
+  <!-- BM monogram -->
+  <g transform="translate(100 104)">
+    <text x="0" y="6" text-anchor="middle"
+          font-family="Impact, 'Arial Black', sans-serif"
+          font-size="52" letter-spacing="2"
+          fill="#a83a1f" stroke="#2e241c" stroke-width="2"
+          paint-order="stroke fill">BM</text>
+  </g>
+
+  <!-- little wrench crossing under BM -->
+  <g transform="translate(100 138) rotate(-18)" stroke="#2e241c" stroke-width="2" fill="#8a8a8f">
+    <rect x="-26" y="-3" width="52" height="6" rx="2"/>
+    <circle cx="-26" cy="0" r="5"/>
+    <circle cx="26" cy="0" r="5"/>
+  </g>
+</svg>
