@@ -97,6 +97,14 @@ a:hover{ color: var(--rust); }
   color: var(--rust);
   margin-top: 6px;
 }
+.brand-est{
+  font-family: ui-monospace, "Courier New", Courier, monospace;
+  font-size: 10px;
+  letter-spacing: .2em;
+  color: var(--ink-soft);
+  margin-top: 6px;
+  opacity: .8;
+}
 
 .nav{ display: flex; gap: 4px; flex-wrap: wrap; }
 .nav a{
@@ -329,6 +337,13 @@ a:hover{ color: var(--rust); }
   color: var(--rust-deep);
   width: 40%;
 }
+.hours-footnote{
+  margin-top: 10px;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--ink-soft);
+  opacity: .7;
+}
 
 /* Contact */
 .contact-grid{
@@ -361,19 +376,30 @@ a:hover{ color: var(--rust); }
 /* ----- Road scene ----- */
 .road-scene{
   position: relative;
-  height: 180px;
+  height: 200px;
   overflow: hidden;
   border-top: 3px solid var(--ink);
 }
 .sky{
   position: absolute;
-  inset: 0 0 80px 0;
-  background: linear-gradient(180deg, #cfe6f0 0%, #f4d8a6 75%, #e6a978 100%);
+  inset: 0 0 90px 0;
+  background: linear-gradient(180deg, #cfe6f0 0%, #f4d8a6 70%, #e6a978 100%);
+}
+.horizon{
+  position: absolute;
+  left: 0; right: 0;
+  bottom: 90px;
+  height: 14px;
+  background:
+    radial-gradient(ellipse at 75% 100%, #6b2212 0 6px, transparent 7px) 0 0 / 120px 14px,
+    radial-gradient(ellipse at 25% 100%, #2a6b6e 0 5px, transparent 6px) 0 0 / 80px 14px,
+    linear-gradient(180deg, transparent 0, rgba(26,20,16,.25) 100%);
+  opacity: .75;
 }
 .road{
   position: absolute;
   left: 0; right: 0; bottom: 0;
-  height: 100px;
+  height: 90px;
   background:
     linear-gradient(180deg, #3a3a3a 0%, #1e1e1e 100%);
   border-top: 3px solid var(--ink);
@@ -403,7 +429,7 @@ a:hover{ color: var(--rust); }
 .truck-track{
   position: absolute;
   left: 0;
-  bottom: 4px;
+  bottom: 8px;
   width: 100%;
   height: 120px;
 }
@@ -411,13 +437,13 @@ a:hover{ color: var(--rust); }
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 260px;
-  height: 110px;
-  animation: drive 18s linear infinite;
+  width: 280px;
+  height: 120px;
+  animation: drive 22s linear infinite;
   will-change: transform;
 }
 @keyframes drive{
-  0%   { transform: translateX(-280px); }
+  0%   { transform: translateX(-300px); }
   100% { transform: translateX(calc(100vw + 40px)); }
 }
 
