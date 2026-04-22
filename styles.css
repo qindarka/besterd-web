@@ -1,4 +1,4 @@
-/* Besterd Mechanical — retro 90s garage aesthetic */
+/* Besterd Mechanical — retro industrial aesthetic */
 
 :root{
   --cream:       #f4ead5;
@@ -65,8 +65,8 @@ a:hover{ color: var(--rust); }
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding-top: 14px;
+  padding-bottom: 14px;
   flex-wrap: wrap;
 }
 .brand{
@@ -76,26 +76,13 @@ a:hover{ color: var(--rust); }
   text-decoration: none;
   color: var(--ink);
 }
+/* Logo is landscape (340×155); render at appropriate height */
 .brand img{
   display: block;
-  width: 88px; height: 88px;
-  image-rendering: pixelated;
-  filter: drop-shadow(2px 2px 0 rgba(0,0,0,.2));
-}
-.brand-text{ display: flex; flex-direction: column; line-height: 1; }
-.brand-name{
-  font-family: "Impact", "Oswald", "Arial Black", sans-serif;
-  font-size: 34px;
-  letter-spacing: .12em;
-  color: var(--ink);
-  text-shadow: 2px 2px 0 var(--caution);
-}
-.brand-sub{
-  font-family: "Impact", "Oswald", "Arial Black", sans-serif;
-  font-size: 18px;
-  letter-spacing: .45em;
-  color: var(--rust);
-  margin-top: 6px;
+  width: auto;
+  height: 72px;
+  image-rendering: auto;
+  filter: drop-shadow(2px 2px 0 rgba(0,0,0,.18));
 }
 
 .nav{ display: flex; gap: 4px; flex-wrap: wrap; }
@@ -110,11 +97,13 @@ a:hover{ color: var(--rust); }
   letter-spacing: .08em;
   text-transform: uppercase;
   font-size: 13px;
+  transition: transform .08s ease, box-shadow .08s ease, background .08s ease;
 }
 .nav a:hover{
   transform: translate(1px,1px);
   box-shadow: 2px 2px 0 var(--ink);
   background: var(--caution);
+  color: var(--ink);
 }
 
 /* hazard tape */
@@ -131,7 +120,7 @@ a:hover{ color: var(--rust); }
 
 /* ----- Hero ----- */
 .hero{
-  padding: 40px 0 48px;
+  padding: 44px 0 52px;
   position: relative;
 }
 .marquee{
@@ -143,14 +132,14 @@ a:hover{ color: var(--rust); }
   letter-spacing: .2em;
   font-size: 13px;
   padding: 8px 0;
-  margin-bottom: 28px;
+  margin-bottom: 32px;
   box-shadow: 4px 4px 0 var(--ink);
 }
 .marquee-track{
   display: flex;
   gap: 48px;
   white-space: nowrap;
-  animation: marquee 28s linear infinite;
+  animation: marquee 36s linear infinite;
   width: max-content;
 }
 @keyframes marquee{
@@ -173,30 +162,32 @@ a:hover{ color: var(--rust); }
 }
 .headline-main{
   display: block;
-  font-size: clamp(44px, 9vw, 96px);
+  font-size: clamp(44px, 9vw, 88px);
   color: var(--ink);
   letter-spacing: .04em;
   text-shadow:
     3px 3px 0 var(--caution),
     6px 6px 0 var(--rust);
+  line-height: 1.02;
 }
 .headline-bottom{
   display: block;
-  font-size: 16px;
-  letter-spacing: .15em;
+  font-size: 15px;
+  letter-spacing: .18em;
   color: var(--ink-soft);
-  margin-top: 18px;
+  margin-top: 22px;
   font-family: ui-monospace, "Courier New", Courier, monospace;
   font-weight: 400;
-  text-transform: none;
+  text-transform: uppercase;
 }
 
 .lede{
-  max-width: 680px;
-  margin: 18px auto 26px;
+  max-width: 700px;
+  margin: 20px auto 28px;
   text-align: center;
   font-size: 16px;
   color: var(--ink-soft);
+  line-height: 1.65;
 }
 
 .cta-row{
@@ -224,7 +215,7 @@ a:hover{ color: var(--rust); }
 
 /* ----- Panels ----- */
 .panel{
-  padding: 52px 0;
+  padding: 56px 0;
   border-top: 3px solid var(--ink);
   position: relative;
 }
@@ -239,20 +230,21 @@ a:hover{ color: var(--rust); }
   margin: 0 0 8px;
   color: var(--ink);
 }
-.panel-note{
+.panel-intro{
+  max-width: 800px;
   color: var(--ink-soft);
-  font-style: italic;
-  margin-top: 0;
-  opacity: .75;
+  margin: 0 0 28px;
+  font-size: 15px;
+  line-height: 1.65;
 }
 
 /* Services */
 .services-grid{
   list-style: none;
   padding: 0;
-  margin: 28px 0 0;
+  margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 18px;
 }
 .services-grid li{
@@ -266,14 +258,16 @@ a:hover{ color: var(--rust); }
   font-family: "Impact", "Oswald", "Arial Black", sans-serif;
   letter-spacing: .08em;
   color: var(--rust-deep);
+  font-size: 17px;
 }
 .services-grid p{
   margin: 0;
   color: var(--ink-soft);
-  font-size: 14px;
+  font-size: 13.5px;
+  line-height: 1.55;
 }
 .srv-icon{
-  font-size: 30px;
+  font-size: 28px;
   display: inline-block;
   line-height: 1;
 }
@@ -282,7 +276,7 @@ a:hover{ color: var(--rust); }
 .about-grid{
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 32px;
+  gap: 36px;
   align-items: start;
 }
 @media (max-width: 720px){ .about-grid{ grid-template-columns: 1fr; } }
@@ -301,109 +295,135 @@ a:hover{ color: var(--rust); }
 }
 .stat strong{
   font-family: "Impact", "Oswald", "Arial Black", sans-serif;
-  font-size: 34px;
+  font-size: 32px;
   color: var(--caution);
   letter-spacing: .04em;
+  white-space: nowrap;
 }
-.stat span{ font-size: 12px; text-transform: uppercase; letter-spacing: .1em; opacity: .9; }
+.stat span{ font-size: 12px; text-transform: uppercase; letter-spacing: .1em; opacity: .9; text-align: right; }
 
-/* Hours */
-.hours{
-  width: 100%;
-  max-width: 560px;
-  border-collapse: collapse;
-  margin-top: 18px;
+/* Affiliation badges */
+.affiliations{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+.badge{
+  display: inline-block;
+  background: var(--ink);
+  color: var(--caution);
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  border: 2px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--caution);
+}
+
+/* Our Work */
+.work-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 8px;
+}
+.work-card{
   background: #fff9ec;
   border: 3px solid var(--ink);
   box-shadow: 5px 5px 0 var(--ink);
+  padding: 20px;
 }
-.hours th, .hours td{
-  padding: 10px 16px;
-  text-align: left;
-  border-bottom: 2px dashed rgba(0,0,0,.2);
-}
-.hours tr:last-child th, .hours tr:last-child td{ border-bottom: none; }
-.hours th{
-  font-family: "Impact", "Oswald", sans-serif;
-  letter-spacing: .1em;
+.work-sector{
+  font-family: "Impact", "Oswald", "Arial Black", sans-serif;
+  font-size: 16px;
+  letter-spacing: .08em;
   color: var(--rust-deep);
-  width: 40%;
+  margin: 0 0 12px;
+}
+.work-card ul{
+  margin: 0;
+  padding: 0 0 0 18px;
+  color: var(--ink-soft);
+  font-size: 13.5px;
+  line-height: 1.7;
 }
 
 /* Contact */
 .contact-grid{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.2fr;
   gap: 32px;
   align-items: start;
 }
 @media (max-width: 720px){ .contact-grid{ grid-template-columns: 1fr; } }
 
-.contact-line{ margin: 8px 0; font-size: 16px; }
+.contact-line{ margin: 10px 0; font-size: 16px; }
 .map-box{
   aspect-ratio: 4 / 3;
-  background:
-    repeating-linear-gradient(45deg, #d9cfa8 0 14px, #cbbe8f 14px 28px);
   border: 3px solid var(--ink);
   box-shadow: 5px 5px 0 var(--ink);
-  display: grid;
-  place-items: center;
-}
-.map-placeholder{
-  background: var(--ink);
-  color: var(--caution);
-  padding: 10px 16px;
-  letter-spacing: .1em;
-  font-size: 12px;
-  text-transform: uppercase;
+  overflow: hidden;
+  background: var(--cream-deep);
 }
 
 /* ----- Road scene ----- */
 .road-scene{
   position: relative;
-  height: 180px;
+  height: 190px;
   overflow: hidden;
   border-top: 3px solid var(--ink);
 }
 .sky{
   position: absolute;
-  inset: 0 0 80px 0;
-  background: linear-gradient(180deg, #cfe6f0 0%, #f4d8a6 75%, #e6a978 100%);
+  inset: 0 0 85px 0;
+  background: linear-gradient(180deg, #c8e0ee 0%, #f0d498 70%, #dda06a 100%);
+}
+/* simple silhouette cityscape / treeline -->
+.sky::after{
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 38px;
+  background:
+    /* building shapes */
+    linear-gradient(transparent 0 60%, #5a7a5a 60% 100%) no-repeat 0 0 / 100% 100%;
 }
 .road{
   position: absolute;
   left: 0; right: 0; bottom: 0;
-  height: 100px;
+  height: 105px;
   background:
-    linear-gradient(180deg, #3a3a3a 0%, #1e1e1e 100%);
+    linear-gradient(180deg, #3e3e3e 0%, #1e1e1e 100%);
   border-top: 3px solid var(--ink);
 }
 .road::before{
-  /* curb/shoulder */
+  /* curb / shoulder hazard stripe */
   content: "";
   position: absolute;
-  left: 0; right: 0; top: -6px;
-  height: 6px;
+  left: 0; right: 0; top: -7px;
+  height: 7px;
   background: repeating-linear-gradient(90deg,
     var(--caution) 0 22px, var(--ink) 22px 44px);
 }
 .road-lines{
   position: absolute;
-  left: 0; right: 0; top: 48px;
-  height: 6px;
+  left: 0; right: 0; top: 50px;
+  height: 7px;
   background: repeating-linear-gradient(90deg,
-    #f2d96a 0 40px, transparent 40px 80px);
-  animation: dash 1.4s linear infinite;
+    #f2d96a 0 44px, transparent 44px 88px);
+  animation: dash 1.3s linear infinite;
 }
 @keyframes dash{
   from{ background-position: 0 0; }
-  to{   background-position: -80px 0; }
+  to{   background-position: -88px 0; }
 }
 
 .truck-track{
   position: absolute;
   left: 0;
-  bottom: 4px;
+  bottom: 6px;
   width: 100%;
   height: 120px;
 }
@@ -411,23 +431,22 @@ a:hover{ color: var(--rust); }
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 260px;
+  width: 280px;
   height: 110px;
-  animation: drive 18s linear infinite;
+  animation: drive 20s linear infinite;
   will-change: transform;
 }
 @keyframes drive{
-  0%   { transform: translateX(-280px); }
-  100% { transform: translateX(calc(100vw + 40px)); }
+  0%   { transform: translateX(-310px); }
+  100% { transform: translateX(calc(100vw + 60px)); }
 }
 
 .truck{
   width: 100%;
   height: 100%;
   display: block;
-  filter: drop-shadow(4px 4px 0 rgba(0,0,0,.35));
-  /* gentle bounce */
-  animation: bounce 0.35s ease-in-out infinite alternate;
+  filter: drop-shadow(4px 4px 0 rgba(0,0,0,.4));
+  animation: bounce 0.38s ease-in-out infinite alternate;
 }
 @keyframes bounce{
   from{ transform: translateY(0); }
@@ -440,10 +459,13 @@ a:hover{ color: var(--rust); }
   to  { transform: rotate(360deg); }
 }
 
-.puff{ animation: puff 1.2s ease-in-out infinite; transform-origin: 240px 58px; }
+.puff{
+  animation: puff 1.4s ease-in-out infinite;
+  transform-origin: 255px 55px;
+}
 @keyframes puff{
-  0%  { opacity: .9; transform: translate(0,0) scale(1); }
-  100%{ opacity: 0;  transform: translate(14px,-10px) scale(1.6); }
+  0%  { opacity: 1;  transform: translate(0,0)    scale(1); }
+  100%{ opacity: 0;  transform: translate(18px,-14px) scale(1.8); }
 }
 
 @media (prefers-reduced-motion: reduce){
@@ -459,7 +481,7 @@ a:hover{ color: var(--rust); }
 .foot{
   background: var(--ink);
   color: var(--cream);
-  padding: 22px 0;
+  padding: 26px 0;
   border-top: 6px solid var(--caution);
   text-align: center;
 }
